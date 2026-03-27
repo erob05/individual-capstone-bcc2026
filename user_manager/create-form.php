@@ -8,7 +8,7 @@
             <br><br>
             <label>Pass: </label><input type="password">
             <br><br>
-            <input type="submit" value="Finalize">
+            <input type="submit" value="Create Account">
         </form>
     </div>
 </main>
