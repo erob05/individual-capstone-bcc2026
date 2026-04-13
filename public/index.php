@@ -1,5 +1,5 @@
-<?php require 'config/config.php';?>
-<?php require 'views/partials/header.php'; ?>
+<?php require '../config/config.php';?>
+<?php require '../views/partials/header.php'; ?>
     <main id="main">
         <div class="main-box">
             <p id="p1">Hi, I’m Eric, a web developer based in Wichita, KS.
@@ -14,4 +14,4 @@
             </p>
         </div>
     </main>
-<?php require 'views/partials/footer.php'; ?>
+<?php require '../views/partials/footer.php'; ?>

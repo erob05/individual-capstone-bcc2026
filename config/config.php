@@ -1,6 +1,8 @@
 <?php
 // App
 define('APP_NAME', 'Eric Roberts');
+// define('BASE_URL', '/individual/');
+// Production
 define('BASE_URL', '/individual/');
 
 // Paths

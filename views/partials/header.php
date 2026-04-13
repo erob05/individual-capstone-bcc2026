@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERIC ROBERTS - WEB DEVELOPER</title>
     <!-- stylesheet -->
-    <link rel="stylesheet" href="<?= PUBLIC_PATH ?>css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>public/css/style.css">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,9 +22,9 @@
             <span></span>
         </div>
         <nav class="nav" id="nav">
-                <p><a href="<?= BASE_URL ?>index.php">Home</a></p>
-                <p><a>Portfolio</a></p>
-                <p><a>Login</a></p>
-                <p><a href="<?= BASE_URL ?>user_manager/create-form.php">Create an Account</a></p>
+                <p><a href="<?= BASE_URL ?>public/index.php">Home</a></p>
+                <p><a href="<?= BASE_URL ?>views/projects/portfolio.php">Portfolio</a></p>
+                <p><a href="<?= BASE_URL ?>views/auth/login.php">Login</a></p>
+                <p><a href="<?= BASE_URL ?>views/auth/register.php">Create an Account</a></p>
         </nav>
     </header>
