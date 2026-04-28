@@ -1,4 +1,5 @@
 <?php
+
 class ProjectController {
     private $pdo;
 
@@ -7,58 +8,49 @@ class ProjectController {
     }
 
     // CREATE
-    public function createProject($title, $github_url, $image_url) {
+    public function create($title, $github, $image) {
         $sql = "INSERT INTO projects (title, github_url, image_url)
-                VALUES (:title, :github_url, :image_url)";
+                VALUES (:title, :github, :image)";
         $stmt = $this->pdo->prepare($sql);
 
         return $stmt->execute([
             ':title' => $title,
-            ':github_url' => $github_url,
-            ':image_url' => $image_url
+            ':github' => $github,
+            ':image' => $image
         ]);
     }
 
     // READ ALL
-    public function getAllProjects() {
-        $sql = "SELECT * FROM projects ORDER BY id DESC";
-        $stmt = $this->pdo->query($sql);
-
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    public function getAll() {
+        return $this->pdo->query("SELECT * FROM projects ORDER BY id DESC")
+                         ->fetchAll(PDO::FETCH_ASSOC);
     }
 
     // READ ONE
-    public function getProjectById($id) {
-        $sql = "SELECT * FROM projects WHERE id = :id";
-        $stmt = $this->pdo->prepare($sql);
+    public function getById($id) {
+        $stmt = $this->pdo->prepare("SELECT * FROM projects WHERE id = :id");
         $stmt->execute([':id' => $id]);
-
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     // UPDATE
-    public function updateProject($id, $title, $github_url, $image_url) {
+    public function update($id, $title, $github, $image) {
         $sql = "UPDATE projects 
-                SET title = :title,
-                    github_url = :github_url,
-                    image_url = :image_url
+                SET title = :title, github_url = :github, image_url = :image
                 WHERE id = :id";
-
         $stmt = $this->pdo->prepare($sql);
 
         return $stmt->execute([
             ':title' => $title,
-            ':github_url' => $github_url,
-            ':image_url' => $image_url,
+            ':github' => $github,
+            ':image' => $image,
             ':id' => $id
         ]);
     }
 
     // DELETE
-    public function deleteProject($id) {
-        $sql = "DELETE FROM projects WHERE id = :id";
-        $stmt = $this->pdo->prepare($sql);
-
+    public function delete($id) {
+        $stmt = $this->pdo->prepare("DELETE FROM projects WHERE id = :id");
         return $stmt->execute([':id' => $id]);
     }
 }
